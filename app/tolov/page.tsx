@@ -2,9 +2,10 @@
 
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 
-export default function Tolov() {
+// Asosiy kontent komponenti
+function TolovContent() {
   const [isFile, setIsFile] = useState(false);
   const [timeLeft, setTimeLeft] = useState(15 * 60);
   const [isUploading, setIsUploading] = useState(false);
@@ -20,7 +21,6 @@ export default function Tolov() {
   const phone = searchParams.get('phone') || '';
   const tarif = searchParams.get('plan') || '';
 
-  // URL parametrlarini tekshirish va vaqt hisoblagichi
   useEffect(() => {
     if (!name || !phone || !tarif) {
       router.push('/');
@@ -41,7 +41,6 @@ export default function Tolov() {
     return () => clearInterval(interval);
   }, [name, phone, tarif, router]);
 
-  // Ma'lumotlarni nusxalash
   const handleCopy = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -52,12 +51,10 @@ export default function Tolov() {
     }
   };
 
-  // Fayl tanlanganida
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Fayl hajmi tekshirish (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       alert('Fayl hajmi 5MB dan katta bo\'lmasligi kerak!');
       return;
@@ -69,7 +66,6 @@ export default function Tolov() {
     handleUpload(file);
   };
 
-  // Faylni serverga yuklash
   const handleUpload = async (file: File) => {
     setIsFile(false);
     setIsUploading(true);
@@ -84,7 +80,6 @@ export default function Tolov() {
       });
 
       if (!response.ok) throw new Error('Yuklash muvaffaqiyatsiz');
-
       const data = await response.json();
       setFilePath(data.filePath || '');
     } catch (error) {
@@ -96,7 +91,6 @@ export default function Tolov() {
     }
   };
 
-  // Rasmni o'chirish
   const handleRemoveImage = () => {
     if (preview) URL.revokeObjectURL(preview);
     setPreview(null);
@@ -105,7 +99,6 @@ export default function Tolov() {
     setFilePath('');
   };
 
-  // Formani yuborish
   const handleSubmit = async () => {
     if (!preview || !filePath) {
       setIsFile(true);
@@ -113,7 +106,6 @@ export default function Tolov() {
     }
 
     setIsUploading(true);
-
     try {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -134,21 +126,18 @@ export default function Tolov() {
     }
   };
 
-  // Narxlarni hisoblash
   const price = tarif === 'premium' ? '1,300,000' :
     tarif === 'vip' ? '3,000,000' : '1,100,000';
 
   const visaPrice = tarif === 'premium' ? '100' :
     tarif === 'vip' ? '233' : '85';
 
-  // Vaqtni formatlash
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
   const seconds = (timeLeft % 60).toString().padStart(2, '0');
 
   return (
     <div className="bg-white min-h-screen flex justify-center text-black">
       <div className="w-full max-w-[450px] my-6 px-3">
-        {/* Tarif ma'lumotlari */}
         <div className="bg-[#DEEEFD] rounded-[5px] px-3 py-2 mb-4">
           <h1 className="text-lg font-semibold text-[#2D3953]">SUPER RUS TILI 40 KUNDA</h1>
           <p className="text-sm text-[#343131] pt-1 pb-3">
@@ -167,13 +156,11 @@ export default function Tolov() {
           </div>
         </div>
 
-        {/* To'lov yo'riqnomasi */}
         <div className="space-y-2">
           <p className="text-[14px] text-[#1f1d1d]">
             1. Quyidagi karta raqamlardan biriga to&apos;lovni o&apos;zingizga qulay ilova orqali amalga oshiring
           </p>
 
-          {/* Plastik karta */}
           <div className="p-3 rounded-[10px] bg-[#fafafa] border border-[#B9B9B9]">
             <div className="flex justify-between items-center mb-2 border-b border-[#B9B9B9] pb-2">
               <p className="font-medium">PLASTIK KARTA</p>
@@ -194,7 +181,6 @@ export default function Tolov() {
             </div>
           </div>
 
-          {/* Visa karta */}
           <div className="p-3 mt-3 rounded-[10px] bg-[#fafafa] border border-[#B9B9B9]">
             <div className="flex justify-between items-center mb-2 border-b border-[#B9B9B9] pb-2">
               <p className="font-medium">VISA KARTA</p>
@@ -215,7 +201,6 @@ export default function Tolov() {
             </div>
           </div>
 
-          {/* Rasm yuklash bo'limi */}
           <p className="text-[14px] text-[#1f1d1d]">
             2. To&apos;lovingiz muvaffaqiyatli amalga oshganini tasdiqlovchi rasmni saqlab oling (screenshot)
           </p>
@@ -282,7 +267,6 @@ export default function Tolov() {
           </button>
         </div>
 
-        {/* Yordam bo'limi */}
         <div className="rounded-[8px] bg-[#FEF7F7] px-4 py-4 mt-6">
           <p className="text-center text-lg">Yordam kerakmi?</p>
           <p className="text-center text-lg">Yordamchi bilan bog&apos;laning</p>
@@ -298,6 +282,19 @@ export default function Tolov() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Asosiy eksport qilinadigan komponent
+export default function Tolov() {
+  return (
+    <Suspense fallback={
+      <div className="h-screen flex items-center justify-center bg-white">
+        <p>Yuklanmoqda...</p>
+      </div>
+    }>
+      <TolovContent />
+    </Suspense>
   );
 }
 

@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export', // Static export uchun
   images: {
-    domains: ['example.com'], 
+    unoptimized: true, // Static exportda
   },
 };
 

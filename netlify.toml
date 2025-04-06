@@ -1,5 +1,4 @@
-# netlify.toml
 [build]
-base = "/"
-command = "npm run build"
-publish = ".next"
+  command = "npm run build"
+  publish = ".next"
+  functions = "functions"
