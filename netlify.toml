@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build && npm run export"
-  publish = "out"
-  functions = "functions"
+  command = "npm run build"
+  publish = ".next"
+  # functions = "functions" # Agar serverless functions ishlatmasangiz, bu qatorni olib tashlang
 
 [context.production.environment]
   NEXT_PUBLIC_BASE_URL = "https://dilshoda-qurbonova.netlify.app"
