@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
+* {
+  font-family: Arial, sans-serif;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+.text-gradient {
+  background: linear-gradient(90deg, #36B26F, #22A3D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 @theme inline {
   --color-background: var(--background);
