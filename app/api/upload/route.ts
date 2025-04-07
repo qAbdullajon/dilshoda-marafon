@@ -17,11 +17,14 @@ export async function POST(request: Request) {
     const extension = file.name.split('.').pop();
     const newFileName = `${Date.now()}.${extension}`;
 
-    const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
+    const { url } = await put(`articles/${newFileName}`, bytes, { 
+      access: 'public',
+      token: process.env.BLOB_READ_WRITE_TOKEN 
+    });
 
     return NextResponse.json({
       success: true,
-      message: 'Fayl muvaffaqiyatli yuklandi',
+      message: 'Fayl yuklandi',
       fileUrl: url,
     });
 
