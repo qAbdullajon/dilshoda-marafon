@@ -17,13 +17,13 @@ function SuccessContent() {
   }
 
   return (
-    <div className="h-screen flex justify-center px-3 py-4 bg-black">
+    <div className="min-h-screen flex justify-center px-3 py-4 pb-6 bg-black">
       <div className="max-w-[430px] text-white">
         <p className="text-center text-5xl">✅</p>
         <p className="text-center text-[#7F6B3C] text-3xl font-semibold pt-5">
           Xaridingiz Muvaffaqiyatli <br /> Yakunlandi
         </p>
-        <p className="text-lg pt-3">Rus tili 40 kunda 5.0 kursi 12-may kuni boshlanadi.</p>
+        <p className="text-lg pt-3">Rus tili 40 kunda 5.0 kursi 21-aprel kuni boshlanadi.</p>
         <p className="text-lg py-2">Siz bilan operatorlarimiz 48 soat ichida bog&apos;lanishadi.</p>
         <p className="text-lg">Kursda ko&apos;rishguncha.</p>
         <p className="text-lg py-2">Hurmat ila</p>
@@ -36,10 +36,10 @@ function SuccessContent() {
           <p className="text-lg">Telefon: {phone}</p>
           <p className="text-lg capitalize">Tarif: {tarif}</p>
           <button 
-            onClick={() => router.push('https://t.me/dilshodakurbonova')} 
+            onClick={() => router.push('https://t.me/dilshodamenedjer01')} 
             className="mt-2 p-1 uppercase cursor-pointer yakun bg-transparent border border-white rounded-none w-full hover:bg-white hover:text-black transition-colors"
           >
-            Kanalga o&apos;ting
+            ADMINGA O&apos;TISH
           </button>
         </div>
       </div>

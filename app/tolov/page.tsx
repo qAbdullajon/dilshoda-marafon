@@ -112,7 +112,7 @@ function TolovContent() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, tarif, image: filePath }),
+        body: JSON.stringify({ name, phone, tarif, image: `$'https://marafon-backend.onrender/${filePath}`}),
       });
       console.log(await response.json());
       
@@ -131,10 +131,10 @@ function TolovContent() {
   };
 
   const price = tarif === 'premium' ? '1,300,000' :
-    tarif === 'vip' ? '3,000,000' : '1,100,000';
+    tarif === 'vip' ? '3,500,000' : '1,100,000';
 
   const visaPrice = tarif === 'premium' ? '100' :
-    tarif === 'vip' ? '233' : '85';
+    tarif === 'vip' ? '269' : '85';
 
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
   const seconds = (timeLeft % 60).toString().padStart(2, '0');

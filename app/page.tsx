@@ -31,7 +31,7 @@ export default function Page() {
 
         const phoneRegex = /^[0-9]{9,12}$/;
         if (!phoneRegex.test(form.phone)) {
-            newErrors.phone = "Quydagicha bo&apos;lishi kerak m: 998901234567";
+            newErrors.phone = "Quydagicha bo'lishi kerak m: 998901234567";
         }
 
         setErrors(newErrors);
@@ -42,11 +42,11 @@ export default function Page() {
     };
 
     return (
-        <div className='flex justify-center w-full min-h-screen'>
-            <div className='w-full max-w-[450px] my-4 mx-3'>
-                <p className='text-[28px] font-medium uppercase text-center'><span className='text-gradient'>Kursda ishtirok</span> etish <span className='text-gradient'>uchun</span> maxsus taklif</p>
+        <div className='flex justify-center w-full min-h-screen bg-[#171717]'>
+            <div className='w-full max-w-[450px] my-4 mx-3 mb-8'>
+                <p className='text-[28px] font-medium uppercase text-center text-white'><span className='text-gradient'>Kursda ishtirok</span> etish <span className='text-gradient'>uchun</span> maxsus taklif</p>
                 <div className="bg-white rounded-[15px] mt-2 overflow-hidden">
-                    <div className="mx-auto p-4 pt-6 border-b border-gray-400">
+                    <div className="mx-auto p-4 pt-6 border-b border-[#BCBCBC]">
                         <div className="relative mx-0 sm:mx-8">
                             <div className="absolute top-3 left-[5%] right-0 h-[8px] w-[90%] bg-[#BCBCBC] z-0">
                                 <div className='bg-[#069957] w-1/4 h-full'></div>
@@ -63,7 +63,7 @@ export default function Page() {
                                     <div className="w-8 h-8 rounded-full bg-gray-300 text-black flex items-center justify-center">
                                         <div className='w-[18px] h-[18px] bg-white rounded-full'></div>
                                     </div>
-                                    <p className="mt-2 text-sm text-center text-[#241d1d]">Sovg&apos;ani <br /> olish</p>
+                                    <p className="mt-2 text-sm text-center text-[#241d1d]">Chekni <br /> kiriting</p>
                                 </div>
 
                                 <div className="flex flex-col items-end">
@@ -80,9 +80,9 @@ export default function Page() {
 
                     <div className="px-4 py-2 text-black text-lg">
                         <p className='text-xl font-semibold py-2 rounded-[8px] bg-black text-center'><span className='text-gradient'>SUPER RUS TILI 40 KUNDA</span></p>
-                        <p className='text-center text-xl pt-1'><b>Start:</b> 12-may</p>
+                        <p className='text-center text-xl pt-1'><b>Start:</b> 21-aprel</p>
                         <p className='text-center text-[17px] sm:text-xl font-bold pt-2'>2025-YIL <span className='text-[#317F5E]'>DILSHODA KURBONOVA</span> BILAN RUS TILIDA ERKIN MULOQOT QILISH DARAJASIGA KURATORLAR NAZORATIDA CHIQASIZ</p>
-                        <p className='text-center text-sm pb-5 pt-2'>Hoziroq formani to\’ldiring va bonuslarni qo\’lga kiriting!</p>
+                        <p className='text-center text-sm pb-5 pt-2'>Hoziroq formani to’ldiring va bonuslarni qo’lga kiriting!</p>
 
                         <form
                             onSubmit={handleSubmit}
@@ -119,7 +119,7 @@ export default function Page() {
                             >
                                 <option value="standard">Standard - 1,100,000</option>
                                 <option value="premium">Premium - 1,300,000</option>
-                                <option value="vip">Vip - 3,000,000</option>
+                                <option value="vip">Vip - 3,500,000</option>
                             </select>
 
                             <button
