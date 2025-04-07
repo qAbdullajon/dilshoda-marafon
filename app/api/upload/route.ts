@@ -1,12 +1,5 @@
+import { put } from '@vercel/blob';
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
 export async function POST(request: Request) {
   try {
@@ -20,31 +13,19 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!file.type.startsWith('image/')) {
-      return NextResponse.json(
-        { success: false, message: 'Faqat rasm fayllari ruxsat etilgan' },
-        { status: 400 }
-      );
-    }
-
     const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
     const extension = file.name.split('.').pop();
     const newFileName = `${Date.now()}.${extension}`;
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
 
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-
-    const filePath = path.join(uploadDir, newFileName);
-    await fs.promises.writeFile(filePath, buffer);
+    const { url } = await put(newFileName, Buffer.from(bytes), {
+      access: 'public',
+      contentType: file.type,
+    });
 
     return NextResponse.json({
       success: true,
       message: 'Fayl muvaffaqiyatli yuklandi',
-      filePath: `/uploads/${newFileName}`,
+      fileUrl: url,
     });
 
   } catch (error) {
