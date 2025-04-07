@@ -94,7 +94,7 @@ export default function Page() {
                                 name="name"
                                 value={form.name}
                                 onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 active:border-black"
+                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
                                 required
                             />
                             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
@@ -105,7 +105,7 @@ export default function Page() {
                                 name="phone"
                                 value={form.phone}
                                 onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 active:border-black"
+                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
                                 required
                             />
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
@@ -115,7 +115,7 @@ export default function Page() {
                                 name="plan"
                                 value={form.plan}
                                 onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 active:border-black"
+                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
                             >
                                 <option value="standard">Standard - 1,100,000</option>
                                 <option value="premium">Premium - 1,300,000</option>
