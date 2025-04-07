@@ -74,14 +74,16 @@ function TolovContent() {
     formData.append('image', file);
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch(`${process.env.DB_URL}/api/file-upload`, {
         method: 'POST',
         body: formData,
       });
 
       if (!response.ok) throw new Error('Yuklash muvaffaqiyatsiz');
       const data = await response.json();
-      setFilePath(data.filePath || '');
+      
+      
+      setFilePath(data || '');
     } catch (error) {
       console.error('Yuklashda xato:', error);
       alert('Rasm yuklanmadi, qayta urinib ko\'ring');
@@ -100,18 +102,20 @@ function TolovContent() {
   };
 
   const handleSubmit = async () => {
-    if (!preview || !filePath) {
+    if (!fileName) {
       setIsFile(true);
       return;
     }
 
     setIsUploading(true);
     try {
-      const response = await fetch('/api/users', {
+      const response = await fetch(`${process.env.DB_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, tarif, image: filePath }),
       });
+      console.log(await response.json());
+      
 
       if (response.ok) {
         router.push(`/success?name=${name}&phone=${phone}&plan=${tarif}`);
@@ -259,7 +263,7 @@ function TolovContent() {
           <button
             disabled={isUploading || !preview}
             onClick={handleSubmit}
-            className={`bg-[#2893F3] w-full text-white py-2 px-4 mt-4 rounded-lg ${
+            className={`bg-[#2893F3] cursor-pointer w-full text-white py-2 px-4 mt-4 rounded-lg ${
               isUploading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#1a7bc9]'
             } transition-colors`}
           >

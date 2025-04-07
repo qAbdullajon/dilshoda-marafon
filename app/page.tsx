@@ -46,7 +46,7 @@ export default function Page() {
             <div className='w-full max-w-[450px] my-4 mx-3'>
                 <p className='text-[28px] font-medium uppercase text-center'><span className='text-gradient'>Kursda ishtirok</span> etish <span className='text-gradient'>uchun</span> maxsus taklif</p>
                 <div className="bg-white rounded-[15px] mt-2 overflow-hidden">
-                    <div className="mx-auto p-4 pt-6 bg-[#EAE8E9] border-b-2 border-gray-400">
+                    <div className="mx-auto p-4 pt-6 border-b border-gray-400">
                         <div className="relative mx-0 sm:mx-8">
                             <div className="absolute top-3 left-[5%] right-0 h-[8px] w-[90%] bg-[#BCBCBC] z-0">
                                 <div className='bg-[#069957] w-1/4 h-full'></div>
