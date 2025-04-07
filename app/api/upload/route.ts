@@ -17,10 +17,7 @@ export async function POST(request: Request) {
     const extension = file.name.split('.').pop();
     const newFileName = `${Date.now()}.${extension}`;
 
-    const { url } = await put(newFileName, Buffer.from(bytes), {
-      access: 'public',
-      contentType: file.type,
-    });
+    const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
 
     return NextResponse.json({
       success: true,
