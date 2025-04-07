@@ -5,9 +5,15 @@
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #36B26F, #22A3D9);
+  background: linear-gradient(90deg, #36b26f, #22a3d9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.react-tel-input .selected-flag:focus:before,
+.react-tel-input .selected-flag.open:before {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 body {

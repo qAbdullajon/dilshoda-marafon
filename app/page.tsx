@@ -2,12 +2,14 @@
 
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
 
 export default function Page() {
     const router = useRouter()
     const [form, setForm] = useState({
         name: "",
-        phone: "998",
+        phone: "",
         plan: "premium",
     });
     const [errors, setErrors] = useState({
@@ -100,13 +102,29 @@ export default function Page() {
                             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
                             <label className="font-semibold">Telefon raqamingiz:</label>
-                            <input
-                                type="tel"
-                                name="phone"
+                            <PhoneInput
+                                country={'uz'}
                                 value={form.phone}
-                                onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
-                                required
+                                onChange={(value) =>
+                                    setForm((prev) => ({
+                                        ...prev,
+                                        phone: value,
+                                    }))
+                                }
+                                inputStyle={{
+                                    boxShadow: "none",
+                                    border: "1px solid #000",
+                                    color:"black",
+                                    borderRadius: "4px",
+                                    width: "100%", 
+                                    height: "44px", 
+                                    paddingLeft: "58px",
+                                }}
+                                buttonStyle={{
+                                    border: "1px solid #000", 
+                                    borderRadius: "4px",
+                                }}
+                                placeholder="Telefon raqamingizni kiriting"
                             />
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
