@@ -74,7 +74,7 @@ function TolovContent() {
     formData.append('image', file);
 
     try {
-      const response = await fetch(`${process.env.DB_URL}/api/file-upload`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/file-upload`, {
         method: 'POST',
         body: formData,
       });
@@ -109,7 +109,7 @@ function TolovContent() {
 
     setIsUploading(true);
     try {
-      const response = await fetch(`${process.env.DB_URL}/api/users`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, tarif, image: filePath }),
