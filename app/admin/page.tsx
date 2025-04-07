@@ -84,9 +84,9 @@ export default function Admin() {
           </div>
         </div>
       ) : (
-        <div className='text-white flex justify-center items-center min-h-screen text-3xl'>
-          Admin Panel
-        </div>
+        <a href={`${process.env.NEXT_PUBLIC_DB_URL}/api/users/download-excel`} className='flex justify-center items-center min-h-screen text-3xl'>
+          Download excel file
+        </a>
       )}
     </>
   )
