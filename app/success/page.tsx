@@ -36,7 +36,7 @@ function SuccessContent() {
           <p className="text-lg">Telefon: {phone}</p>
           <p className="text-lg capitalize">Tarif: {tarif}</p>
           <button 
-            onClick={() => router.push('https://t.me/dilshodamenedjer01')} 
+            onClick={() => router.push('https://t.me//dilshoda_kurbonova')} 
             className="mt-2 p-1 uppercase cursor-pointer yakun bg-transparent border border-white rounded-none w-full hover:bg-white hover:text-black transition-colors"
           >
             ADMINGA O&apos;TISH

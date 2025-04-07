@@ -275,7 +275,7 @@ function TolovContent() {
           <p className="text-center text-lg">Yordam kerakmi?</p>
           <p className="text-center text-lg">Yordamchi bilan bog&apos;laning</p>
           <a
-            href="https://t.me/dilshodamenedjer01"
+            href="https://t.me//dilshoda_kurbonova"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-[#D2424E] text-white w-full p-2 mt-2 rounded-[8px] hover:bg-[#b83742] transition-colors"
