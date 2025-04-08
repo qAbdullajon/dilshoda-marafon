@@ -135,9 +135,9 @@ export default function Page() {
                                 onChange={handleChange}
                                 className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
                             >
-                                <option value="standard">Standard - 1,100,000</option>
-                                <option value="premium">Premium - 1,300,000</option>
-                                <option value="vip">Vip - 3,500,000</option>
+                                <option value="standard">Standard - 1,097,000</option>
+                                <option value="premium">Premium - 1,297,000</option>
+                                <option value="vip">Vip - 3,497,000</option>
                             </select>
 
                             <button

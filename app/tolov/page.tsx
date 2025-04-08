@@ -130,8 +130,8 @@ function TolovContent() {
     }
   };
 
-  const price = tarif === 'premium' ? '1,300,000' :
-    tarif === 'vip' ? '3,500,000' : '1,100,000';
+  const price = tarif === 'premium' ? '1,297,000' :
+    tarif === 'vip' ? '3,497,000' : '1,097,000';
 
   const visaPrice = tarif === 'premium' ? '100' :
     tarif === 'vip' ? '269' : '85';
