@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import ImageAuth from "../public/auther.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
   const [isOpen, setIsOpen] = useState(false);
