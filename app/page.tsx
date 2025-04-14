@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import ImageAuth from "../public/auther.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function Register() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Register() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value }: any = e.target;
+    const { name, value } = e.target as HTMLInputElement;
     setForm({ ...form, [name]: value });
   };
 
@@ -58,6 +58,9 @@ export default function Register() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
         })
+        const res = await req.json()
+        console.log(res);
+        
       } catch (error) {
         console.log(error);
       }
@@ -102,7 +105,7 @@ export default function Register() {
               </div>
             </div>
             <p className="text-2xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-              Qanday qilib so'z boyligini 10 varavar oshirib, yodlagan so'z va
+              Qanday qilib so&apos;z boyligini 10 varavar oshirib, yodlagan so&apos;z va
               qoidalarni muloqotda erkin ishlatish mumkin?
             </p>
             {/* <img className="md:hidden" src={Image} alt="" /> */}
@@ -130,23 +133,23 @@ export default function Register() {
               <div className="flex items-start gap-2">
                 <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
-                  Qanday qilib 25 daqiqada 65 ta so'zni eslab qolish va avtomat
+                  Qanday qilib 25 daqiqada 65 ta so&apos;zni eslab qolish va avtomat
                   muloqatda ishlatish mumkin
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
-                  Qanday qilib to'g'ri gap tuzish formulasnini o'rganib tez va
-                  oson fikringizni to'liq rus tilida gapirish
+                  Qanday qilib to&apos;g&apos;ri gap tuzish formulasnini o&apos;rganib tez va
+                  oson fikringizni to&apos;liq rus tilida gapirish
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
-                  Qanday qilib 1.000 ta fe'lni 12.000 ta qilib ishlatish;
-                  РОДlarni; so'zlarning oxirida ishlatiladigan qo'shimchalarni
-                  ko'rib chiqamiz
+                  Qanday qilib 1.000 ta fe&apos;lni 12.000 ta qilib ishlatish;
+                  РОДlarni; so&apos;zlarning oxirida ishlatiladigan qo&apos;shimchalarni
+                  ko&apos;rib chiqamiz
                 </p>
               </div>
             </div>
@@ -179,7 +182,7 @@ export default function Register() {
             onClick={(e) => e.stopPropagation()} // modal ichida bosganda yopilmasligi uchun
           >
             <p className="text-xl font-semibold mb-[11px] text-center">
-              Online marafonda ishtirok etish uchun quyidagi formani to'ldiring!
+              Online marafonda ishtirok etish uchun quyidagi formani to&apos;ldiring!
             </p>
             <form
               onSubmit={handleSubmit}
