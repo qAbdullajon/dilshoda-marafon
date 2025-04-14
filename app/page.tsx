@@ -24,7 +24,7 @@ export default function Register() {
     phone: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value }: any = e.target;
     setForm({ ...form, [name]: value });
   };
@@ -44,7 +44,7 @@ export default function Register() {
     }
 
     if (!form.phone || form.phone.length <= 11) {
-      newErrors.phone = "Iltimos, to&apos;liq telefon raqamingizni kiriting.";
+      newErrors.phone = "Iltimos, to'liq telefon raqamingizni kiriting.";
       formIsValid = false;
     }
 
@@ -62,8 +62,10 @@ export default function Register() {
         console.log(error);
       }
       finally {
-        navigate.push('/subscription')
+        closeModal(); // Modalni yopish
+        navigate.push("/subscription");
       }
+
     }
   }
   return (
