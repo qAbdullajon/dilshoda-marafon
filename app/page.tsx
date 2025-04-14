@@ -1,157 +1,240 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import Image from "next/image";
+import React, { FormEventHandler, useState } from "react";
+import ImageAuth from "../public/auther.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
+import { useRouter } from "next/navigation";
 
-export default function Page() {
-    const router = useRouter()
-    const [form, setForm] = useState({
-        name: "",
-        phone: "",
-        plan: "premium",
-    });
-    const [errors, setErrors] = useState({
-        name: "",
-        phone: "",
-    });
+export default function Register() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useRouter()
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
-    };
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+  });
 
-        const newErrors = { name: "", phone: "" };
+  const [errors, setErrors] = useState({
+    name: "",
+    phone: "",
+  });
 
-        if (form.name.trim().length < 4) {
-            newErrors.name = "Iltimos ism familyangizni yozing!";
-        }
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
+    const { name, value }: any = e.target;
+    setForm({ ...form, [name]: value });
+  };
 
-        const phoneRegex = /^[0-9]{9,12}$/;
-        if (!phoneRegex.test(form.phone)) {
-            newErrors.phone = "Quydagicha bo'lishi kerak m: 998901234567";
-        }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-        setErrors(newErrors);
+    let formIsValid = true;
+    const newErrors = { name: "", phone: "" };
 
-        if (newErrors.name === "" && newErrors.phone === "") {
-            router.push(`/tolov?name=${form.name}&phone=${form.phone}&plan=${form.plan}`)
-        }
-    };
+    if (!form.name.trim()) {
+      newErrors.name = "Iltimos, ismingizni kiriting";
+      formIsValid = false;
+    } else if (form.name.length < 5) {
+      newErrors.name = "Ism kamida 5 ta belgidan iborat bo‘lishi kerak";
+      formIsValid = false;
+    }
 
-    return (
-        <div className='flex justify-center w-full min-h-screen bg-[#171717]'>
-            <div className='w-full max-w-[450px] my-4 mx-3 mb-8'>
-                <p className='text-[28px] font-medium uppercase text-center text-white'><span className='text-gradient'>Kursda ishtirok</span> etish <span className='text-gradient'>uchun</span> maxsus taklif</p>
-                <div className="bg-white rounded-[15px] mt-2 overflow-hidden">
-                    <div className="mx-auto p-4 pt-6 border-b border-[#BCBCBC]">
-                        <div className="relative mx-0 sm:mx-8">
-                            <div className="absolute top-3 left-[5%] right-0 h-[8px] w-[90%] bg-[#BCBCBC] z-0">
-                                <div className='bg-[#069957] w-1/4 h-full'></div>
-                            </div>
-                            <div className="flex justify-between relative z-10">
-                                <div className="flex flex-col items-start">
-                                    <div className="w-8 h-8 rounded-full bg-[#069957] text-white flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-check-icon lucide-circle-check"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg>
-                                    </div>
-                                    <p className="mt-2 text-sm text-center text-[#241d1d]">Ma&apos;lumot <br /> kiritish</p>
-                                </div>
+    if (!form.phone || form.phone.length <= 11) {
+      newErrors.phone = "Iltimos, to‘liq telefon raqamingizni kiriting.";
+      formIsValid = false;
+    }
 
-                                <div className="flex flex-col items-center">
-                                    <div className="w-8 h-8 rounded-full bg-gray-300 text-black flex items-center justify-center">
-                                        <div className='w-[18px] h-[18px] bg-white rounded-full'></div>
-                                    </div>
-                                    <p className="mt-2 text-sm text-center text-[#241d1d]">Chekni <br /> kiriting</p>
-                                </div>
+    setErrors(newErrors);
 
-                                <div className="flex flex-col items-end">
-                                    <div className="w-8 h-8 rounded-full bg-gray-300 text-black flex items-center justify-center">
-                                        <div className='w-[18px] h-[18px] bg-white rounded-full'></div>
-                                    </div>
-                                    <p className="mt-2 text-sm text-center text-[#241d1d]">Yakunlash</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    if (formIsValid) {
+      console.log("Yuborilmoqda:", form);
+      try {
+        const req = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form)
+        })
+      } catch (error) {
+        console.log(error);
+      }
+      finally {
+        navigate.push('/subscription')
+      }
+    }
+  };
 
-
-
-                    <div className="px-4 py-2 text-black text-lg">
-                        <p className='text-xl font-semibold py-2 rounded-[8px] bg-black text-center'><span className='text-gradient'>SUPER RUS TILI 40 KUNDA</span></p>
-                        <p className='text-center text-xl pt-1'><b>Start:</b> 21-aprel</p>
-                        <p className='text-center text-[17px] sm:text-xl font-bold pt-2'>2025-YIL <span className='text-[#317F5E]'>DILSHODA KURBONOVA</span> BILAN RUS TILIDA ERKIN MULOQOT QILISH DARAJASIGA KURATORLAR NAZORATIDA CHIQASIZ</p>
-                        <p className='text-center text-sm pb-5 pt-2'>Hoziroq formani to’ldiring va bonuslarni qo’lga kiriting!</p>
-
-                        <form
-                            onSubmit={handleSubmit}
-                            className="max-w-md mx-auto bg-white rounded-2xl shadow-xl space-y-4"
-                        >
-                            <label className="font-semibold">Ism familyangiz:</label>
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
-                                required
-                            />
-                            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-
-                            <label className="font-semibold">Telefon raqamingiz:</label>
-                            <PhoneInput
-                                country={'uz'}
-                                value={form.phone}
-                                onChange={(value) =>
-                                    setForm((prev) => ({
-                                        ...prev,
-                                        phone: value,
-                                    }))
-                                }
-                                inputStyle={{
-                                    boxShadow: "none",
-                                    border: "1px solid #000",
-                                    color:"black",
-                                    borderRadius: "4px",
-                                    width: "100%", 
-                                    height: "44px", 
-                                    paddingLeft: "58px",
-                                }}
-                                buttonStyle={{
-                                    border: "1px solid #000", 
-                                    borderRadius: "4px",
-                                }}
-                                placeholder="Telefon raqamingizni kiriting"
-                            />
-                            {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-
-                            <label className="font-semibold">Tarifni tanlang:</label>
-                            <select
-                                name="plan"
-                                value={form.plan}
-                                onChange={handleChange}
-                                className="w-full border rounded-[4px] p-2 focus:border-black outline-none"
-                            >
-                                <option value="standard">Standard - 1,097,000</option>
-                                <option value="premium">Premium - 1,297,000</option>
-                                <option value="vip">Vip - 3,497,000</option>
-                            </select>
-
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-[#39FC79] to-[#05B7FF] cursor-pointer hover:opacity-80 uppercase text-black text-base font-semibold py-2 rounded-[6px] transition"
-                            >
-                                Davom etish
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
+  return (
+    <>
+      <div className="bg-black min-h-screen text-white">
+        {/* HEADER */}
+        <div className="header-wrapper py-4 md:py-[20px]">
+          <div className="header">
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+            <p>23-24-25-Aprel bepul marafon</p>
+          </div>
         </div>
-    )
+
+        {/* MAIN */}
+        <div className="flex items-center w-[95%] md:w-[90%] mx-auto">
+          <div className="">
+            <div className="flex items-center justify-center md:justify-start gap-[14px]">
+              <div className="flex items-center gap-2 border text-sm border-white rounded-[100px] px-2 py-2 md:px-7 md:py-2 md:text-lg w-fit">
+                <div className="w-[15px] h-[15px] rounded-full bg-[#e3a90a] main-animation"></div>
+                <span>23-24-25-aprel | 20:00 UZB</span>
+              </div>
+              <div>
+                <p className="text-[10px] md:text-base font-medium">
+                  Dilshoda Kurbonova
+                </p>
+                <p className="text-[10px] md:text-base text-[#E3A90A]">
+                  Bepul Marafon
+                </p>
+              </div>
+            </div>
+            <p className="text-2xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
+              Qanday qilib so'z boyligini 10 varavar oshirib, yodlagan so'z va
+              qoidalarni muloqotda erkin ishlatish mumkin?
+            </p>
+            {/* <img className="md:hidden" src={Image} alt="" /> */}
+            <Image
+              src={ImageAuth}
+              className="md:hidden"
+              priority
+              alt="ImageAuth"
+            />
+            <div className="flex items-center flex-col -translate-y-2 bg-black gap-2 md:hidden">
+              <button
+                onClick={openModal}
+                className="uppercase text-black cursor-pointer font-semibold text-xl bg-[#E3A90A] rounded-[25px] px-16 py-6"
+              >
+                Ishtirok etish
+              </button>
+              <p className="text-[40px] font-medium">BEPUL</p>
+            </div>
+
+            <p className="text-lg pt-0.5 pb-5 text-center md:text-start">
+              3 kunlik marafonda siz:
+            </p>
+
+            <div className="md:w-[521px]">
+              <div className="flex items-start gap-2">
+                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="text-lg">
+                  Qanday qilib 25 daqiqada 65 ta so'zni eslab qolish va avtomat
+                  muloqatda ishlatish mumkin
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="text-lg">
+                  Qanday qilib to'g'ri gap tuzish formulasnini o'rganib tez va
+                  oson fikringizni to'liq rus tilida gapirish
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="text-lg">
+                  Qanday qilib 1.000 ta fe'lni 12.000 ta qilib ishlatish;
+                  РОДlarni; so'zlarning oxirida ishlatiladigan qo'shimchalarni
+                  ko'rib chiqamiz
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center flex-col gap-5 pt-5 md:flex-row">
+              <button
+                onClick={openModal}
+                className="uppercase text-black cursor-pointer font-semibold text-xl bg-[#E3A90A] rounded-[25px] px-16 py-6"
+              >
+                Ishtirok etish
+              </button>
+              <p className="text-[40px] font-medium">BEPUL</p>
+            </div>
+          </div>
+          <Image
+            src={ImageAuth}
+            className="w-[502px] lg:w-[440px] xl:w-[502px] object-cover h-[630px] hidden lg:inline"
+            alt="ImageAuth priority"
+          />
+        </div>
+      </div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white px-[45px] py-10 w-[560px]"
+            onClick={(e) => e.stopPropagation()} // modal ichida bosganda yopilmasligi uchun
+          >
+            <p className="text-xl font-semibold mb-[11px] text-center">
+              Online marafonda ishtirok etish uchun quyidagi formani to'ldiring!
+            </p>
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-md mx-auto bg-white rounded-2xl shadow-xl space-y-4"
+            >
+              <label className="text-xl font-light">Ism familyangiz:</label>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                className="w-full border border-[#c9c9c9] rounded-[4px] px-5 h-[60px] focus:border-[#c9c9c9] outline-none"
+                required
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
+
+              <label className="text-xl font-light">Telefon raqamingiz:</label>
+              <PhoneInput
+                country={"uz"}
+                value={form.phone}
+                onChange={(value) =>
+                  setForm((prev) => ({
+                    ...prev,
+                    phone: value,
+                  }))
+                }
+                inputStyle={{
+                  boxShadow: "none",
+                  border: "1px solid #c9c9c9",
+                  color: "black",
+                  borderRadius: "4px",
+                  width: "100%",
+                  height: "60px",
+                  paddingLeft: "58px",
+                }}
+                buttonStyle={{
+                  border: "none",
+                  borderRadius: "4px",
+                }}
+                placeholder="Telefon raqamingizni kiriting"
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone}</p>
+              )}
+              <button
+                type="submit"
+                className="w-full text-base font-bold uppercase py-3 cursor-pointer bg-[#DBA30A] text-white rounded"
+              >
+                Yuborish
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }

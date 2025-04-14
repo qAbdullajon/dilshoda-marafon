@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 * {
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-gradient {
@@ -16,6 +18,40 @@
   box-shadow: none !important;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.header-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  gap: 205px;
+  white-space: nowrap;
+  animation: scroll-left 3s linear infinite;
+}
+.header p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.main-animation {
+  animation: opacity-o 1s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-471px);
+  }
+}
+
+@keyframes opacity-o {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

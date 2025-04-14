@@ -26,7 +26,6 @@ export default function Admin() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-
         if (
             form.login === process.env.NEXT_PUBLIC_ADMIN_LOGIN &&
             form.parol === process.env.NEXT_PUBLIC_ADMIN_PAROL
@@ -84,10 +83,14 @@ export default function Admin() {
                     </div>
                 </div>
             ) : (
-                <div className='flex justify-center items-center min-h-screen'>
+                <div className='flex justify-center items-center gap-3 min-h-screen'>
+                    <a href={`${process.env.NEXT_PUBLIC_DB_URL}/api/register/download-excel`} className='flex items-center gap-2 bg-green-700 text-white p-4 rounded-2xl'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cloud-download-icon lucide-cloud-download"><path d="M12 13v8l-4-4" /><path d="m12 21 4-4" /><path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" /></svg>
+                        <span>Target orqali qo'shilganlar</span>
+                    </a>
                     <a href={`${process.env.NEXT_PUBLIC_DB_URL}/api/users/download-excel`} className='flex items-center gap-2 bg-green-700 text-white p-4 rounded-2xl'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cloud-download-icon lucide-cloud-download"><path d="M12 13v8l-4-4" /><path d="m12 21 4-4" /><path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" /></svg>
-                        <span>Download excel file</span>
+                        <span>Tolov qilganlar</span>
                     </a>
                 </div>
             )}
