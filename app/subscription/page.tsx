@@ -8,10 +8,10 @@ export default function Subscription() {
                     !
                 </div>
             </div>
-            <p className='text-center text-[35px] font-bold mt-6'>TO'XTANG! <br /> YANA BIR QADAM...</p>
-            <p className='text-center text-[19px] mt-6 mb-14'>Jonli efirda qatnashish uchun quyidagi <br /> sariq tugmani bosib yopiq kanalga <br /> qo'shiling</p>
+            <p className='text-center text-[35px] font-bold mt-6'>TO&apos;XTANG! <br /> YANA BIR QADAM...</p>
+            <p className='text-center text-[19px] mt-6 mb-14'>Jonli efirda qatnashish uchun quyidagi <br /> sariq tugmani bosib yopiq kanalga <br /> qo&apos;shiling</p>
             <button className="bg-[#E3A90A] text-lg px-16 py-6 cursor-pointer rounded-2xl shadow-2xl shadow-[#e8c259]">
-                KANALGA OBUNA BO'LISH
+                KANALGA OBUNA BO&apos;LISH
             </button>
         </div>
     )

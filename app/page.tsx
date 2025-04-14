@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { FormEventHandler, useState } from "react";
+import React, { useState } from "react";
 import ImageAuth from "../public/auther.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
@@ -44,7 +44,7 @@ export default function Register() {
     }
 
     if (!form.phone || form.phone.length <= 11) {
-      newErrors.phone = "Iltimos, to‘liq telefon raqamingizni kiriting.";
+      newErrors.phone = "Iltimos, to&apos;liq telefon raqamingizni kiriting.";
       formIsValid = false;
     }
 
@@ -65,8 +65,7 @@ export default function Register() {
         navigate.push('/subscription')
       }
     }
-  };
-
+  }
   return (
     <>
       <div className="bg-black min-h-screen text-white">
