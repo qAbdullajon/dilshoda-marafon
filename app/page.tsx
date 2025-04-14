@@ -178,7 +178,7 @@ export default function Register() {
             <p className="pt-10 text-lg">Barcha huquqlar himoyalangan, 2025.</p>
 
             <p className="pt-[14px] text-base md:text-lg text-center">
-              (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma’lumotnomaga asosan xizmat ko'rsatadi.
+              (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma&apos;lumotnomaga asosan xizmat ko&apos;rsatadi.
             </p>
             <p className="pt-[14px] text-base md:text-lg text-center">
               This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way
