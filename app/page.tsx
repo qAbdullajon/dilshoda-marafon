@@ -60,7 +60,7 @@ export default function Register() {
         })
         const res = await req.json()
         console.log(res);
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -170,6 +170,24 @@ export default function Register() {
             alt="ImageAuth priority"
           />
         </div>
+
+        <div className="max-w-[560px] w-full mx-auto">
+          <div className="flex flex-col items-center mt-10">
+            <p className="font-bold text-[22px]">Dilshoda Kurbonova</p>
+            <a className="text-xl font-medium" href="tel:+998917893555">+998 91 789 35 55</a>
+            <p className="pt-10 text-lg">Barcha huquqlar himoyalangan, 2025.</p>
+
+            <p className="pt-[14px] text-base md:text-lg text-center">
+              (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma’lumotnomaga asosan xizmat ko'rsatadi.
+            </p>
+            <p className="pt-[14px] text-base md:text-lg text-center">
+              This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way
+            </p>
+            <p className="pt-[14px] pb-7 text-base md:text-lg text-center">
+              FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.
+            </p>
+          </div>
+        </div>
       </div>
 
       {isOpen && (
@@ -178,7 +196,7 @@ export default function Register() {
           onClick={closeModal}
         >
           <div
-            className="bg-white px-[45px] py-10 w-[560px]"
+            className="bg-white px-4 py-4 md::px-[45px] md:py-10 w-[560px]"
             onClick={(e) => e.stopPropagation()} // modal ichida bosganda yopilmasligi uchun
           >
             <p className="text-xl font-semibold mb-[11px] text-center">
