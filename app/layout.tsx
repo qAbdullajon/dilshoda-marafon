@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { GoogleTagManager } from '@next/third-parties/google'
+import Script from "next/script";
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
@@ -14,14 +14,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics script */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-GH8NCEDTX5"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GH8NCEDTX5');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${montserrat.variable} antialiased`}
-        style={{ fontFamily: "'Arial', sans-serif" }} // Arialni qo'shish
+        style={{ fontFamily: "'Arial', sans-serif" }}
         suppressHydrationWarning
       >
         {children}
       </body>
-        <GoogleTagManager gtmId="G-GH8NCEDTX5" />
     </html>
   );
 }
