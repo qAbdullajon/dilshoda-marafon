@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
@@ -21,7 +21,7 @@ export default function RootLayout({
       >
         {children}
       </body>
-        <GoogleAnalytics gaId="G-GH8NCEDTX5" />
+        <GoogleTagManager gtmId="G-GH8NCEDTX5" />
     </html>
   );
 }
