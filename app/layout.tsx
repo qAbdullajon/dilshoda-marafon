@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Script from "next/script"; // ✅ Google Script uchun kerak
+import Script from "next/script"; 
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
@@ -15,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* ✅ Google Analytics Script */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-GH8NCEDTX5"
