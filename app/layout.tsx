@@ -1,6 +1,5 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
