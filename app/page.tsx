@@ -6,7 +6,6 @@ import ImageAuth from "../public/auther.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { useRouter } from "next/navigation";
-import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Register() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +13,7 @@ export default function Register() {
 
   const openModal = () => {
     setIsOpen(true)
-    sendGAEvent({ event: "buttonCliked", value: "xyz" })
+
   };
   const closeModal = () => setIsOpen(false);
 
