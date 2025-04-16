@@ -107,8 +107,7 @@ export default function Register() {
               </div>
             </div>
             <p className="text-2xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-              Qanday qilib so&apos;z boyligini 10 varavar oshirib, yodlagan so&apos;z va
-              qoidalarni muloqotda erkin ishlatish mumkin?
+              Qanday qilib 3 kun ichida Super Rus tili metodi orqali erkin muloqotga chiqish mumkin?
             </p>
             {/* <img className="md:hidden" src={Image} alt="" /> */}
             <Image
@@ -124,31 +123,29 @@ export default function Register() {
               >
                 Ishtirok etish
               </button>
-              <p className="text-[40px] font-medium">BEPUL</p>
             </div>
-
-            <p className="text-lg pt-0.5 pb-5 text-center md:text-start">
-              3 kunlik marafonda siz:
+            <p className="flex items-center justify-between text-lg md:text-xl py-5 max-w-[400px] mx-auto md:mx-0">
+              <span>Marafon narxi</span>
+              <p><span className="line-through">300.000 so&apos;m</span> <span className="text-[#167D3A] font-semibold uppercase">Bepul</span></p>
             </p>
-
             <div className="md:w-[521px]">
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 mb-2">
                 <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
-                <p className="text-lg">
+                <p className="text-base">
                   Qanday qilib 25 daqiqada 65 ta so&apos;zni eslab qolish va avtomat
                   muloqatda ishlatish mumkin
                 </p>
               </div>
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 mb-2">
                 <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
-                <p className="text-lg">
+                <p className="text-base">
                   Qanday qilib to&apos;g&apos;ri gap tuzish formulasnini o&apos;rganib tez va
                   oson fikringizni to&apos;liq rus tilida gapirish
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
-                <p className="text-lg">
+                <p className="text-base">
                   Qanday qilib 1.000 ta fe&apos;lni 12.000 ta qilib ishlatish;
                   РОДlarni; so&apos;zlarning oxirida ishlatiladigan qo&apos;shimchalarni
                   ko&apos;rib chiqamiz
