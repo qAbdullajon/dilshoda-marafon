@@ -12,8 +12,8 @@ export default function Register() {
   const navigate = useRouter()
 
   const openModal = () => {
-    setIsOpen(true)
-
+    // setIsOpen(true)
+    navigate.push('https://t.me/dilshodakurbonova_marafon')
   };
   const closeModal = () => setIsOpen(false);
 
@@ -76,9 +76,9 @@ export default function Register() {
   }
   return (
     <>
-      <div className="bg-black min-h-screen text-white">
+      <div className="min-h-screen text-black">
         {/* HEADER */}
-        <div className="header-wrapper py-4 md:py-[20px]">
+        {/* <div className="header-wrapper py-4 md:py-[20px]">
           <div className="header">
             <p>23-24-25-Aprel bepul marafon</p>
             <p>23-24-25-Aprel bepul marafon</p>
@@ -88,21 +88,20 @@ export default function Register() {
             <p>23-24-25-Aprel bepul marafon</p>
             <p>23-24-25-Aprel bepul marafon</p>
           </div>
-        </div>
+        </div> */}
 
         {/* MAIN */}
         <div className="flex items-center w-[95%] md:w-[90%] mx-auto">
           <div className="">
-            <div className="flex items-center justify-center md:justify-start gap-[14px]">
-              <div className="flex items-center gap-2 border text-sm border-white rounded-[100px] px-2 py-2 md:px-7 md:py-2 md:text-lg w-fit">
-                <div className="w-[15px] h-[15px] rounded-full bg-[#e3a90a] main-animation"></div>
+            <div className="flex items-center justify-center md:justify-start gap-[14px] mt-2">
+              <div className="flex items-center gap-2 border text-sm border-black rounded-[100px] px-2 py-2 md:px-7 md:py-2 md:text-lg w-fit">
                 <span>23-24-25-aprel | 20:00 UZB</span>
               </div>
               <div>
                 <p className="text-[10px] md:text-base font-medium">
                   Dilshoda Kurbonova
                 </p>
-                <p className="text-[10px] md:text-base text-[#E3A90A]">
+                <p className="text-[10px] md:text-base text-[#167D3A]">
                   Bepul Marafon
                 </p>
               </div>
@@ -118,10 +117,10 @@ export default function Register() {
               priority
               alt="ImageAuth"
             />
-            <div className="flex items-center flex-col -translate-y-2 bg-black gap-2 md:hidden">
+            <div className="flex items-center flex-col -translate-y-2 gap-2 md:hidden">
               <button
                 onClick={openModal}
-                className="uppercase text-black cursor-pointer font-semibold text-xl bg-[#E3A90A] rounded-[25px] px-16 py-6"
+                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
               >
                 Ishtirok etish
               </button>
@@ -134,21 +133,21 @@ export default function Register() {
 
             <div className="md:w-[521px]">
               <div className="flex items-start gap-2">
-                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
                   Qanday qilib 25 daqiqada 65 ta so&apos;zni eslab qolish va avtomat
                   muloqatda ishlatish mumkin
                 </p>
               </div>
               <div className="flex items-start gap-2">
-                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
                   Qanday qilib to&apos;g&apos;ri gap tuzish formulasnini o&apos;rganib tez va
                   oson fikringizni to&apos;liq rus tilida gapirish
                 </p>
               </div>
               <div className="flex items-start gap-2">
-                <p className="w-2 h-2 bg-[#E3A90A] mt-2 min-w-2 rounded-full"></p>
+                <p className="w-2 h-2 bg-[#167D3A] mt-2 min-w-2 rounded-full"></p>
                 <p className="text-lg">
                   Qanday qilib 1.000 ta fe&apos;lni 12.000 ta qilib ishlatish;
                   РОДlarni; so&apos;zlarning oxirida ishlatiladigan qo&apos;shimchalarni
@@ -160,7 +159,7 @@ export default function Register() {
             <div className="flex items-center flex-col gap-5 pt-5 md:flex-row">
               <button
                 onClick={openModal}
-                className="uppercase text-black cursor-pointer font-semibold text-xl bg-[#E3A90A] rounded-[25px] px-16 py-6"
+                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
               >
                 Ishtirok etish
               </button>
@@ -193,7 +192,7 @@ export default function Register() {
         </div>
       </div>
 
-      {isOpen && (
+      {/* {isOpen && (
         <div
           className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
           onClick={closeModal}
@@ -259,7 +258,7 @@ export default function Register() {
             </form>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }
