@@ -150,13 +150,13 @@ export default function Register() {
             </div>
 
             <div className="flex items-center flex-col gap-5 pt-5 md:flex-row">
-              <p className="flex items-center gap-2 text-lg font-medium max-w-[420px] leading-5">
+              <p className="flex items-center md:order-2 gap-2 text-lg font-medium max-w-[420px] leading-5">
                 <Image src={ImageSovga} alt="as" width={50} />
                 <span>Rus tili eng ko&apos;p ishlatiladigan 1000 ta iboralar ro&apos;yxati</span>
               </p>
               <button
                 onClick={openModal}
-                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
+                className="uppercase text-white md:order-1 cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
               >
                 Ishtirok etish
               </button>
@@ -252,9 +252,9 @@ export default function Register() {
                 {
                   loading ? (
                     <div className="mx-auto w-fit animate-spin">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
                     </div>
-                  ): "Yuborish"
+                  ) : "Yuborish"
                 }
               </button>
             </form>
