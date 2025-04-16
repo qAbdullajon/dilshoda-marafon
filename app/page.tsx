@@ -43,8 +43,8 @@ export default function Register() {
     if (!form.name.trim()) {
       newErrors.name = "Iltimos, ismingizni kiriting";
       formIsValid = false;
-    } else if (form.name.length < 5) {
-      newErrors.name = "Ism kamida 5 ta belgidan iborat bo‘lishi kerak";
+    } else if (form.name.length < 4) {
+      newErrors.name = "Ism kamida 4 ta belgidan iborat bo‘lishi kerak";
       formIsValid = false;
     }
 
