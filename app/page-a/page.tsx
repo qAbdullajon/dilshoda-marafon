@@ -29,7 +29,7 @@ export default function Register() {
           </div>
 
           <p className="text-xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-          Qanday qilib 3 kunda so'z boyligingizni oshirib, <span className="underline">Rus tilida qo'rqmasdan gapirish</span> mumkin
+          Qanday qilib 3 kunda so&apos;z boyligingizni oshirib, <span className="underline">Rus tilida qo&apos;rqmasdan gapirish</span> mumkin
           </p>
 
           <Image
@@ -51,7 +51,7 @@ export default function Register() {
           <p className="flex items-center justify-between text-lg md:text-xl py-5 max-w-[400px] mx-auto md:mx-0">
             <span>Marafon narxi</span>
             <span>
-              <span className="line-through">300.000 so'm</span>
+              <span className="line-through">300.000 so&apos;m</span>
               <span className="text-[#167D3A] font-semibold uppercase ml-2">Bepul</span>
             </span>
           </p>
@@ -62,7 +62,7 @@ export default function Register() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
               </div>
               <p className="text-base">
-                Qanday qilib 25 daqiqada 65 ta so'zni eslab qolish mumkin
+                Qanday qilib 25 daqiqada 65 ta so&apos;zni eslab qolish mumkin
               </p>
             </div>
             <div className="flex items-center gap-2 mb-2">
@@ -70,7 +70,7 @@ export default function Register() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
               </div>
               <p className="text-base">
-                Qanday qilib yodlagan so'z va qoidalarizni muloqotda ishlatish 7 ta sirli usuli
+                Qanday qilib yodlagan so&apos;z va qoidalarizni muloqotda ishlatish 7 ta sirli usuli
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -78,7 +78,7 @@ export default function Register() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
               </div>
               <p className="text-base">
-                Qanday qilib rus tilida erkin gapirishiz metodini ko'rib chiqamiz
+                Qanday qilib rus tilida erkin gapirishiz metodini ko&apos;rib chiqamiz
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function Register() {
           <div className="flex items-center flex-col gap-5 pt-5 md:flex-row">
             <p className="flex items-center gap-2 text-lg font-medium max-w-[420px] leading-5">
               <Image src={ImageSovga} alt="as" width={50} />
-              <span>Rus tili eng ko'p ishlatiladigan 1000 ta iboralar ro'yxati</span>
+              <span>Rus tili eng ko&apos;p ishlatiladigan 1000 ta iboralar ro&apos;yxati</span>
             </p>
             <button
               onClick={openModal}
@@ -110,7 +110,7 @@ export default function Register() {
           <a className="text-xl font-medium" href="tel:+998917893555">+998 91 789 35 55</a>
           <p className="pt-10 text-lg">Barcha huquqlar himoyalangan, 2025.</p>
           <p className="pt-[14px] text-base md:text-lg text-center">
-            (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma'lumotnomaga asosan xizmat ko'rsatadi.
+            (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma&apos;lumotnomaga asosan xizmat ko&apos;rsatadi.
           </p>
           <p className="pt-[14px] text-base md:text-lg text-center">
             This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way
