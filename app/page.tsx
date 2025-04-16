@@ -1,79 +1,79 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import ImageAuth from "../public/auther.png";
-import PhoneInput from "react-phone-input-2";
+// import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { useRouter } from "next/navigation";
 
 export default function Register() {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const navigate = useRouter()
 
   const openModal = () => {
     // setIsOpen(true)
     navigate.push('https://t.me/dilshodakurbonova_marafon')
   };
-  const closeModal = () => setIsOpen(false);
+  // const closeModal = () => setIsOpen(false);
 
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-  });
+  // const [form, setForm] = useState({
+  //   name: "",
+  //   phone: "",
+  // });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    phone: "",
-  });
+  // const [errors, setErrors] = useState({
+  //   name: "",
+  //   phone: "",
+  // });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target as HTMLInputElement;
-    setForm({ ...form, [name]: value });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target as HTMLInputElement;
+  //   setForm({ ...form, [name]: value });
+  // };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    let formIsValid = true;
-    const newErrors = { name: "", phone: "" };
+  //   let formIsValid = true;
+  //   const newErrors = { name: "", phone: "" };
 
-    if (!form.name.trim()) {
-      newErrors.name = "Iltimos, ismingizni kiriting";
-      formIsValid = false;
-    } else if (form.name.length < 5) {
-      newErrors.name = "Ism kamida 5 ta belgidan iborat bo‘lishi kerak";
-      formIsValid = false;
-    }
+  //   if (!form.name.trim()) {
+  //     newErrors.name = "Iltimos, ismingizni kiriting";
+  //     formIsValid = false;
+  //   } else if (form.name.length < 5) {
+  //     newErrors.name = "Ism kamida 5 ta belgidan iborat bo‘lishi kerak";
+  //     formIsValid = false;
+  //   }
 
-    if (!form.phone || form.phone.length <= 11) {
-      newErrors.phone = "Iltimos, to'liq telefon raqamingizni kiriting.";
-      formIsValid = false;
-    }
+  //   if (!form.phone || form.phone.length <= 11) {
+  //     newErrors.phone = "Iltimos, to'liq telefon raqamingizni kiriting.";
+  //     formIsValid = false;
+  //   }
 
-    setErrors(newErrors);
+  //   setErrors(newErrors);
 
-    if (formIsValid) {
-      console.log("Yuborilmoqda:", form);
-      try {
-        const req = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/register`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(form)
-        })
-        const res = await req.json()
-        console.log(res);
+  //   if (formIsValid) {
+  //     console.log("Yuborilmoqda:", form);
+  //     try {
+  //       const req = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/register`, {
+  //         method: 'POST',
+  //         headers: { 'Content-Type': 'application/json' },
+  //         body: JSON.stringify(form)
+  //       })
+  //       const res = await req.json()
+  //       console.log(res);
 
-      } catch (error) {
-        console.log(error);
-      }
-      finally {
-        closeModal(); // Modalni yopish
-        navigate.push("/subscription");
-      }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //     finally {
+  //       // closeModal(); // Modalni yopish
+  //       navigate.push("/subscription");
+  //     }
 
-    }
-  }
+  //   }
+  // }
   return (
     <>
       <div className="min-h-screen text-black">
