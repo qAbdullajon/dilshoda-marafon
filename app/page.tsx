@@ -247,7 +247,7 @@ export default function Register() {
               )}
               <button
                 type="submit"
-                className="w-full text-base font-bold uppercase py-3 cursor-pointer bg-[#DBA30A] text-white rounded"
+                className="w-full text-base font-bold uppercase py-3 cursor-pointer bg-[#167D3A] text-white rounded"
               >
                 {
                   loading ? (
