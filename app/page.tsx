@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 export default function Register() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useRouter()
+  const [loading, setLoading] = useState(false)
 
   const openModal = () => {
     setIsOpen(true)
@@ -34,7 +35,6 @@ export default function Register() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     let formIsValid = true;
     const newErrors = { name: "", phone: "" };
 
@@ -56,6 +56,7 @@ export default function Register() {
     if (formIsValid) {
       console.log("Yuborilmoqda:", form);
       try {
+        setLoading(true)
         const req = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -68,8 +69,9 @@ export default function Register() {
         console.log(error);
       }
       finally {
-        closeModal(); // Modalni yopish
         navigate.push("/subscription");
+        closeModal(); // Modalni yopish
+        setLoading(false)
       }
 
     }
@@ -252,9 +254,15 @@ export default function Register() {
               )}
               <button
                 type="submit"
-                className="w-full text-base font-bold uppercase py-3 cursor-pointer bg-[#DBA30A] text-white rounded"
+                className="w-full text-base font-bold uppercase py-3 cursor-pointer bg-[#167D3A] text-white rounded"
               >
-                Yuborish
+                {
+                  loading ? (
+                    <div className="animate-spin w-fit mx-auto">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
+                    </div>
+                  ) : "Yuborish"
+                }
               </button>
             </form>
           </div>
