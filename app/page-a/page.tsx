@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ImageAuth from "../../public/auther.png";
+import ImageAuth from "../../public/aauther3.png";
 import ImageSovga from "../../public/sovga5.jpg"
 import "react-phone-input-2/lib/bootstrap.css";
 import PhoneInput from "react-phone-input-2";
@@ -95,7 +95,7 @@ export default function Register() {
             </div>
 
             <p className="text-xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-              Qanday qilib 3 kun ichida Super Rus tili metodi orqali erkin muloqotga chiqish mumkin?
+            Qanday qilib 3 kunda so&apos;z boyligingizni oshirib, <span className="underline">Rus tilida qo&apos;rqmasdan gapirish</span> mumkin?
             </p>
 
             <Image
