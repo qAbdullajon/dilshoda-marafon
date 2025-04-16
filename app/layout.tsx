@@ -1,12 +1,17 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import Script from "next/script";
+import type { Metadata } from "next";
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: "22-23-24-Aprel | Soat 20:00",
+  description: "Qanday qilib 3 kun ichida Super Rus tili metodi orqali erkin muloqotga chiqish mumkin?",
+};
 
 export default function RootLayout({
   children,
@@ -15,10 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>My Website</title>
-      </Head>
-
       <Script
         id="facebook-pixel"
         strategy="afterInteractive"
