@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
-import ImageAuth from "../public/auther.png";
-import ImageSovga from "../public/sovga5.jpg"
+import ImageAuth from "../../public/aauther3.png";
+import ImageSovga from "../../public/sovga5.jpg"
 import "react-phone-input-2/lib/bootstrap.css";
 import { useRouter } from "next/navigation";
 
@@ -29,7 +29,7 @@ export default function Register() {
           </div>
 
           <p className="text-xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-            Qanday qilib 3 kun ichida Super Rus tili metodi orqali erkin muloqotga chiqish mumkin?
+          Qanday qilib 3 kunda so'z boyligingizni oshirib, <span className="underline">Rus tilida qo'rqmasdan gapirish</span> mumkin
           </p>
 
           <Image
@@ -39,10 +39,10 @@ export default function Register() {
             alt="ImageAuth"
           />
 
-          <div className="flex items-center flex-col -translate-y-2 gap-2 md:hidden">
+          <div className="flex items-center flex-col -translate-y-4 gap-2 md:hidden">
             <button
               onClick={openModal}
-              className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
+              className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-20 py-6"
             >
               Ishtirok etish
             </button>
@@ -90,7 +90,7 @@ export default function Register() {
             </p>
             <button
               onClick={openModal}
-              className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
+              className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-20 py-6"
             >
               Ishtirok etish
             </button>
