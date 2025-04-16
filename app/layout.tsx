@@ -4,7 +4,7 @@ import Script from "next/script";
 import type { Metadata } from "next";
 
 const montserrat = Montserrat({
-  variable: "--font-geist-sans",
+  variable: "--font-montserrat", // variable nomini moslashtirdim
   subsets: ["latin"],
 });
 
@@ -19,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="uz"> {/* O'zbek tilida bo'lsa, 'en'ni 'uz'ga o'zgartiring */}
       <Script
         id="facebook-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `
+          __html: ` 
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -38,10 +38,8 @@ export default function RootLayout({
           `,
         }}
       />
-
       <body
-        className={`${montserrat.variable} antialiased`}
-        style={{ fontFamily: "'Arial', sans-serif" }}
+        className={`${montserrat.variable} antialiased`} // CSS variable orqali fontni qo'llash
         suppressHydrationWarning
       >
         {children}
