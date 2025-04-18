@@ -71,7 +71,6 @@ export default function Register() {
         console.log(error);
       }
       finally {
-        // closeModal(); // Modalni yopish
         navigate.push("/subscription");
         setLoading(false)
       }
@@ -81,40 +80,37 @@ export default function Register() {
 
   return (
     <>
-      <div className="min-h-screen text-black">
+      <div className="min-h-screen text-black pt-5">
         <div className="flex items-center w-[95%] md:w-[90%] mx-auto">
           <div>
-            <div className="flex items-center justify-center md:justify-start gap-[14px] mt-2">
-              <div className="flex items-center gap-2 border text-sm border-black rounded-[100px] px-2 py-2 md:px-7 md:py-2 md:text-lg w-fit">
-                <span>23-24-25-aprel | 20:00 UZB</span>
-              </div>
-              <div>
-                <p className="text-[10px] md:text-base font-medium">Dilshoda Kurbonova</p>
-                <p className="text-[10px] md:text-base text-[#167D3A]">Bepul Marafon</p>
+            <div className="">
+              <div className="text-sm md:text-xl font-bold border border-[#167D3A] text-center py-2 md:py-3 rounded-lg max-w-[285px] md:max-w-[400px] mx-auto md:mx-0">
+                <span>23-24-25-Aprel | Soat 20:00 da</span>
               </div>
             </div>
+            <p className="text-[13px] py-3 text-center md:text-start">Dilshoda Kurbonovadan 3-kunlik BEPUL Marafon</p>
 
-            <p className="text-xl text-center md:text-[36px] font-semibold pt-5 md:pt-[30px] md:text-start">
-            Qanday qilib 3 kunda so&apos;z boyligingizni oshirib, <span className="underline">Rus tilida qo&apos;rqmasdan gapirish</span> mumkin?
+            <p className="text-lg text-center md:text-[36px] font-semibold md:pt-[30px] md:text-start">
+              Qanday qilib 3 kunda so&apos;z boyligingizni oshirib, <span className="text-[#167D3A]">Rus tilida qo&apos;rqmasdan gapirish</span> mumkin
             </p>
 
             <Image
               src={ImageAuth}
-              className="md:hidden"
+              className="md:hidden w-[70%] max-w-[350px] mx-auto mt-6"
               priority
               alt="ImageAuth"
             />
 
-            <div className="flex items-center flex-col -translate-y-2 gap-2 md:hidden">
+            <div className="flex items-center flex-col -translate-y-5 gap-2 md:hidden">
               <button
                 onClick={openModal}
-                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
+                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] shadow-xl shadow-[#9a9797] rounded-full w-full max-w-[320px] py-6"
               >
                 Ishtirok etish
               </button>
             </div>
 
-            <p className="flex items-center justify-between text-lg md:text-xl py-5 max-w-[400px] mx-auto md:mx-0">
+            <p className="flex items-center justify-between text- md:text-xl pb-5 px-2 max-w-[400px] mx-auto md:mx-0">
               <span>Marafon narxi</span>
               <span>
                 <span className="line-through">300.000 so&apos;m</span>
@@ -122,12 +118,12 @@ export default function Register() {
               </span>
             </p>
 
-            <div className="md:w-[521px]">
+            <div className="md:w-[521px] px-2">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 bg-[#167D3A] rounded-full min-w-6 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
                 </div>
-                <p className="text-base">
+                <p className="text-sm">
                   Qanday qilib 25 daqiqada 65 ta so&apos;zni eslab qolish mumkin
                 </p>
               </div>
@@ -135,7 +131,7 @@ export default function Register() {
                 <div className="w-6 h-6 bg-[#167D3A] rounded-full min-w-6 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
                 </div>
-                <p className="text-base">
+                <p className="text-sm">
                   Qanday qilib yodlagan so&apos;z va qoidalarizni muloqotda ishlatish 7 ta sirli usuli
                 </p>
               </div>
@@ -143,7 +139,7 @@ export default function Register() {
                 <div className="w-6 h-6 bg-[#167D3A] rounded-full min-w-6 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
                 </div>
-                <p className="text-base">
+                <p className="text-sm">
                   Qanday qilib rus tilida erkin gapirishiz metodini ko&apos;rib chiqamiz
                 </p>
               </div>
@@ -156,7 +152,7 @@ export default function Register() {
               </p>
               <button
                 onClick={openModal}
-                className="uppercase text-white md:order-1 cursor-pointer font-semibold text-xl bg-[#167D3A] rounded-[25px] px-16 py-6"
+                className="uppercase text-white cursor-pointer font-semibold text-xl bg-[#167D3A] shadow-xl shadow-[#9a9797] rounded-full w-full max-w-[320px] py-6"
               >
                 Ishtirok etish
               </button>
@@ -171,18 +167,18 @@ export default function Register() {
           />
         </div>
 
-        <div className="max-w-[560px] w-full mx-auto">
+        <div className="max-w-[560px] w-full mx-auto px-2">
           <div className="flex flex-col items-center mt-10">
             <p className="font-bold text-[22px]">Dilshoda Kurbonova</p>
             <a className="text-xl font-medium" href="tel:+998917893555">+998 91 789 35 55</a>
-            <p className="pt-10 text-lg">Barcha huquqlar himoyalangan, 2025.</p>
-            <p className="pt-[14px] text-base md:text-lg text-center">
+            <p className="pt-10 text-base text-center">Barcha huquqlar himoyalangan, 2025.</p>
+            <p className="pt-[14px] text-[12px] md:text-lg text-center">
               (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma&apos;lumotnomaga asosan xizmat ko&apos;rsatadi.
             </p>
-            <p className="pt-[14px] text-base md:text-lg text-center">
+            <p className="pt-[14px] text-[12px] md:text-lg text-center">
               This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way
             </p>
-            <p className="pt-[14px] pb-7 text-base md:text-lg text-center">
+            <p className="pt-[14px] pb-7 text-[12px] md:text-lg text-center">
               FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.
             </p>
           </div>
@@ -252,9 +248,9 @@ export default function Register() {
                 {
                   loading ? (
                     <div className="mx-auto w-fit animate-spin">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
                     </div>
-                  ): "Yuborish"
+                  ) : "Yuborish"
                 }
               </button>
             </form>

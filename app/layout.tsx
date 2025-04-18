@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "22-23-24-Aprel | Soat 20:00",
+  title: "23-24-25-Aprel | Soat 20:00",
   description: "Qanday qilib 3 kun ichida Super Rus tili metodi orqali erkin muloqotga chiqish mumkin?",
 };
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uz"> {/* O'zbek tilida bo'lsa, 'en'ni 'uz'ga o'zgartiring */}
+    <html lang="en">
       <Script
         id="facebook-pixel"
         strategy="afterInteractive"
@@ -39,7 +39,7 @@ export default function RootLayout({
         }}
       />
       <body
-        className={`${montserrat.variable} antialiased`} // CSS variable orqali fontni qo'llash
+        className={`${montserrat.variable} antialiased`} 
         suppressHydrationWarning
       >
         {children}
