@@ -13,7 +13,7 @@ export default function Subscription() {
                 </div>
             </div>
             <p className='text-center text-[35px] font-bold mt-6'>TO&apos;XTANG! <br /> YANA BIR QADAM...</p>
-            <p className='text-center text-[19px] mt-6 mb-14'>Jonli efirda qatnashish uchun quyidagi <br /> sariq tugmani bosib yopiq kanalga <br /> qo&apos;shiling</p>
+            <p className='text-center text-[19px] mt-6 mb-14'>Jonli efirda qatnashish uchun quyidagi <br /> yashil tugmani bosib yopiq kanalga <br /> qo&apos;shiling</p>
             <button onClick={() => navigate.push('https://t.me/+i-VBLX5lcDs5YjQy')} className="bg-[#167D3A] text-lg px-10 py-5 md:px-16 md:py-6 cursor-pointer rounded-2xl shadow-2xl shadow-[#167D3A]">
                 KANALGA OBUNA BO&apos;LISH
             </button>
