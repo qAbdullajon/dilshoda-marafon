@@ -119,6 +119,7 @@ export default function Register() {
             </p>
 
             <div className="md:w-[521px] px-2">
+              <p className="text-center text-lg font-semibold pb-2">Marafonda siz:</p>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 bg-[#167D3A] rounded-full min-w-6 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon text-white lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
