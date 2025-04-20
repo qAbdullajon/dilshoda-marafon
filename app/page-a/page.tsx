@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import ImageAuth from "../../public/aauther3.png";
+import ImageAuth from "../../public/auther02.webp";
 import ImageSovga from "../../public/sovga5.jpg"
 import "react-phone-input-2/lib/bootstrap.css";
 import PhoneInput from "react-phone-input-2";
