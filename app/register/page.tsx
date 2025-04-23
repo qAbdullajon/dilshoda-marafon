@@ -45,12 +45,12 @@ export default function Page() {
 
   return (
     <div className='flex justify-center w-full min-h-screen bg-[#171717]'>
-      <div className='w-full max-w-[450px] my-4 mx-3 mb-8'>
+      <div className='w-full max-w-[450px] my-4 mx-1 mb-8'>
         <p className='text-[22px] min-[450px]:text-[28px] font-medium uppercase text-center text-white'><span className='text-gradient'>Kursda ishtirok</span> etish <br /> <span className='text-gradient'>uchun</span> maxsus taklif</p>
         <div className="bg-white rounded-[15px] mt-2 overflow-hidden">
           <div className="mx-auto p-4 pt-6 border-b border-[#BCBCBC]">
             <div className="relative mx-0 sm:mx-8">
-              <div className="absolute top-3 left-[5%] right-0 h-[8px] w-[90%] bg-gray-200 z-0">
+              <div className="absolute top-3 left-[6%] right-0 h-[8px] w-[88%] bg-gray-200 z-0">
                 <div className='bg-[#069957] w-1/4 h-full'></div>
               </div>
               <div className="flex justify-between relative z-10 px-4">
@@ -77,7 +77,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="px-4 py-2 text-black text-lg">
+          <div className="px-2 py-3 pb-5 text-black text-lg">
             <p className='text-xl font-semibold py-2 rounded-[8px] bg-black text-center'><span className='text-gradient'>SUPER RUS TILI 40 KUNDA</span></p>
             <p className='text-center text-xl pt-1'><b>Start:</b> 15-May</p>
             <p className='text-center text-[15px] sm:text-xl font-bold pt-2'>2025-YIL <span className='text-[#317F5E]'>DILSHODA KURBONOVA</span> BILAN RUS TILIDA ERKIN MULOQOT QILISH DARAJASIGA KURATORLAR NAZORATIDA CHIQASIZ</p>
