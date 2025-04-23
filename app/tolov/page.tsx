@@ -81,8 +81,8 @@ function TolovContent() {
 
       if (!response.ok) throw new Error('Yuklash muvaffaqiyatsiz');
       const data = await response.json();
-      
-      
+
+
       setFilePath(data || '');
     } catch (error) {
       console.error('Yuklashda xato:', error);
@@ -102,6 +102,8 @@ function TolovContent() {
   };
 
   const handleSubmit = async () => {
+    console.log(fileName);
+
     if (!fileName) {
       setIsFile(true);
       return;
@@ -112,10 +114,10 @@ function TolovContent() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_DB_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, tarif, image: `https://marafon-backend.onrender.com/${filePath}`}),
+        body: JSON.stringify({ name, phone, tarif, image: `https://marafon-backend.onrender.com/${filePath}` }),
       });
       console.log(await response.json());
-      
+
 
       if (response.ok) {
         router.push(`/success?name=${name}&phone=${phone}&plan=${tarif}`);
@@ -130,11 +132,11 @@ function TolovContent() {
     }
   };
 
-  const price = tarif === 'premium' ? '1,297,000' :
-    tarif === 'vip' ? '3,497,000' : '1,097,000';
+  const price = tarif === 'premium' ? '1,497,000' :
+    tarif === 'vip' ? '3,997,000' : '1,397,000';
 
-  const visaPrice = tarif === 'premium' ? '100' :
-    tarif === 'vip' ? '269' : '85';
+  const visaPrice = tarif === 'premium' ? '115' :
+    tarif === 'vip' ? '309' : '108';
 
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
   const seconds = (timeLeft % 60).toString().padStart(2, '0');
@@ -261,17 +263,17 @@ function TolovContent() {
           )}
 
           <button
-            disabled={isUploading || !preview}
             onClick={handleSubmit}
-            className={`bg-[#2893F3] cursor-pointer w-full text-white py-2 px-4 mt-4 rounded-lg ${
-              isUploading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#1a7bc9]'
-            } transition-colors`}
+            className={`bg-[#2893F3] cursor-pointer w-full text-white py-2 px-4 mt-4 rounded-lg ${isUploading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#1a7bc9]'
+              } transition-colors`}
           >
-            {isUploading ? 'Yuborilmoqda...' : 'Davom etish'}
+            {isUploading ? <p className='mx-auto w-fit animate-spin'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
+            </p> : 'Davom etish'}
           </button>
         </div>
 
-        <div className="rounded-[8px] bg-[#FEF7F7] px-4 py-4 mt-6">
+        <div className="rounded-[8px] bg-[#FEF7F7] px-4 mt-6">
           <p className="text-center text-lg">Yordam kerakmi?</p>
           <p className="text-center text-lg">Yordamchi bilan bog&apos;laning</p>
           <a
@@ -283,6 +285,23 @@ function TolovContent() {
             <SendIcon />
             <span>Yordamchi bilan bog&apos;lanish</span>
           </a>
+        </div>
+
+        <div className="max-w-[560px] w-full mx-auto px-2">
+          <div className="flex flex-col items-center mt-10">
+            <p className="font-bold text-[22px]">Dilshoda Kurbonova</p>
+            <a className="text-xl font-medium" href="tel:+998917893555">+998 91 789 35 55</a>
+            <p className="pt-10 text-base text-center">Barcha huquqlar himoyalangan, 2025.</p>
+            <p className="pt-[14px] text-[12px] md:text-lg text-center">
+              (STIR: 632157672) 28.07.2023 yil berilgan № 0003994396-sonli ma&apos;lumotnomaga asosan xizmat ko&apos;rsatadi.
+            </p>
+            <p className="pt-[14px] text-[12px] md:text-lg text-center">
+              This site or product is not part of or endorsed by Facebook, Google, or any social media platform in any way
+            </p>
+            <p className="pt-[14px] pb-7 text-[12px] md:text-lg text-center">
+              FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.
+            </p>
+          </div>
         </div>
       </div>
     </div>

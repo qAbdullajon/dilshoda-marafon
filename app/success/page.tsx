@@ -20,21 +20,21 @@ function SuccessContent() {
     <div className="min-h-screen flex justify-center px-3 py-4 pb-6 bg-black">
       <div className="max-w-[430px] text-white">
         <p className="text-center text-5xl">✅</p>
-        <p className="text-center text-[#7F6B3C] text-3xl font-semibold pt-5">
+        <p className="text-center text-[#7F6B3C] text-2xl font-semibold pt-5">
           Xaridingiz Muvaffaqiyatli <br /> Yakunlandi
         </p>
-        <p className="text-lg pt-3">Rus tili 40 kunda 5.0 kursi 21-aprel kuni boshlanadi.</p>
-        <p className="text-lg py-2">Siz bilan operatorlarimiz 48 soat ichida bog&apos;lanishadi.</p>
-        <p className="text-lg">Kursda ko&apos;rishguncha.</p>
-        <p className="text-lg py-2">Hurmat ila</p>
-        <p className="text-lg pb-3">Dilshoda Qurbonova</p>
+        <p className="text-base md:text-lg pt-3">Rus tili 40 kunda 5.0 kursi 21-aprel kuni boshlanadi.</p>
+        <p className="text-base md:text-lg py-2">Siz bilan operatorlarimiz 48 soat ichida bog&apos;lanishadi.</p>
+        <p className="text-base md:text-lg">Kursda ko&apos;rishguncha.</p>
+        <p className="text-base md:text-lg py-2">Hurmat ila</p>
+        <p className="text-base md:text-lg pb-3">Dilshoda Qurbonova</p>
         <div className="border-2 border-white py-2 px-3">
           <p className="text-3xl text-center text-[#7F6B3C]">Chek Tasdiqlandi</p>
           <div className="h-[1px] bg-white my-2"></div>
-          <p className="text-lg">Kurs: Rus tili 40 kunda 5.0</p>
-          <p className="text-lg">Ism: {name}</p>
-          <p className="text-lg">Telefon: {phone}</p>
-          <p className="text-lg capitalize">Tarif: {tarif}</p>
+          <p className="text-base md:text-lg">Kurs: Rus tili 40 kunda 5.0</p>
+          <p className="text-base md:text-lg">Ism: {name}</p>
+          <p className="text-base md:text-lg">Telefon: {phone}</p>
+          <p className="text-base md:text-lg capitalize">Tarif: {tarif}</p>
           <button 
             onClick={() => router.push('https://t.me//dilshoda_kurbonova')} 
             className="mt-2 p-1 uppercase cursor-pointer yakun bg-transparent border border-white rounded-none w-full hover:bg-white hover:text-black transition-colors"
