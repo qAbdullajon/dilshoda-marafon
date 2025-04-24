@@ -79,7 +79,7 @@ export default function Page() {
           </div>
           <div className="px-2 py-3 pb-5 text-black text-lg">
             <p className='text-xl font-semibold py-2 rounded-[8px] bg-black text-center'><span className='text-gradient'>SUPER RUS TILI 40 KUNDA</span></p>
-            <p className='text-center text-xl pt-1'><b>Start:</b> 15-May</p>
+            <p className='text-center text-xl pt-1'><b>Start:</b> 12-May</p>
             <p className='text-center text-[15px] sm:text-xl font-bold pt-2'>2025-YIL <span className='text-[#317F5E]'>DILSHODA KURBONOVA</span> BILAN RUS TILIDA ERKIN MULOQOT QILISH DARAJASIGA KURATORLAR NAZORATIDA CHIQASIZ</p>
             <p className='text-center text-[12px] pb-5 pt-2'>Hoziroq formani to’ldiring va bonuslarni qo’lga kiriting!</p>
 
