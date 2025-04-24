@@ -23,7 +23,7 @@ function SuccessContent() {
         <p className="text-center text-[#7F6B3C] text-2xl font-semibold pt-5">
           Xaridingiz Muvaffaqiyatli <br /> Yakunlandi
         </p>
-        <p className="text-base md:text-lg pt-3">Rus tili 40 kunda 5.0 kursi 21-aprel kuni boshlanadi.</p>
+        <p className="text-base md:text-lg pt-3">Rus tili 40 kunda 7.0 kursi 21-aprel kuni boshlanadi.</p>
         <p className="text-base md:text-lg py-2">Siz bilan operatorlarimiz 48 soat ichida bog&apos;lanishadi.</p>
         <p className="text-base md:text-lg">Kursda ko&apos;rishguncha.</p>
         <p className="text-base md:text-lg py-2">Hurmat ila</p>
