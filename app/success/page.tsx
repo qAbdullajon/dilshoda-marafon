@@ -31,7 +31,7 @@ function SuccessContent() {
         <div className="border-2 border-white py-2 px-3">
           <p className="text-3xl text-center text-[#7F6B3C]">Chek Tasdiqlandi</p>
           <div className="h-[1px] bg-white my-2"></div>
-          <p className="text-base md:text-lg">Kurs: Rus tili 40 kunda 5.0</p>
+          <p className="text-base md:text-lg">Kurs: Rus tili 40 kunda 6.0</p>
           <p className="text-base md:text-lg">Ism: {name}</p>
           <p className="text-base md:text-lg">Telefon: {phone}</p>
           <p className="text-base md:text-lg capitalize">Tarif: {tarif}</p>
